@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="root_screen">
+    <PreferenceCategory
+            android:title="常用">
+        <ListPreference
+            android:key="_language"
+            android:entries="@array/language"
+            android:entryValues="@array/language"
+            android:title="语种, 默认普通话"
+            android:summary=""
+            android:defaultValue="@string/language_default"
+            android:dialogTitle="语种"/>
+        <ListPreference
+            android:key="_model"
+            android:entries="@array/_model_list"
+            android:entryValues="@array/_model_list"
+            android:title="短句输入或者长句输入"
+            android:summary=""
+            android:defaultValue="@string/_model_default"
+            android:dialogTitle="长短句"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="翻译">
+        <ListPreference
+            android:key="_translate"
+            android:entries="@array/translate"
+            android:entryValues="@array/translate"
+            android:title="语种, 默认英文"
+            android:summary=""
+            android:defaultValue="@string/translate_default"
+            android:dialogTitle="语种"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="播报">
+        <ListPreference
+            android:key="_voicer"
+            android:entries="@array/voicer_cloud_entries"
+            android:entryValues="@array/voicer_cloud_values"
+            android:title="播报语种"
+            android:summary=""
+            android:defaultValue="@string/translate_default"
+            android:dialogTitle="播报语种"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="高级">
+        <ListPreference
+            android:key="vad"
+            android:entries="@array/vad_list"
+            android:entryValues="@array/vad_list"
+            android:title="VAD算法"
+            android:summary=""
+            android:defaultValue="@string/vad_default"
+            android:dialogTitle="VAD"/>
+        <ListPreference
+            android:key="vad.endpoint-timeout"
+            android:entries="@array/vad_timeout_list"
+            android:entryValues="@array/vad_timeout_list"
+            android:title="长语音及VAD时长设置"
+            android:summary=""
+            android:defaultValue="@string/vad_timeout_default"
+            android:dialogTitle="长语音请选0"/>
+        <ListPreference
+            android:key="infile"
+            android:entries="@array/infile_list"
+            android:entryValues="@array/infile_list"
+            android:title="外部音频"
+            android:summary=""
+            android:defaultValue="@string/infile_default"
+            android:dialogTitle="外部音频"/>
+        <ListPreference
+            android:key="prop"
+            android:entries="@array/prop_list"
+            android:entryValues="@array/prop_list"
+            android:title="垂直领域（在线功能，离线不生效）"
+            android:summary=""
+            android:defaultValue="@string/prop_default"
+            android:dialogTitle="垂直领域（离线不生效）"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disable-punctuation"
+            android:summary=""
+            android:title="在选择长句（输入法模型）时，是否要关闭标点符号"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="不常用">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disable-punctuation"
+            android:summary="在选择长句（输入法模型）的前提下生效。"
+            android:title="禁用标点" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="_tips_sound"
+            android:summary=""
+            android:title="提示音"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="_outfile"
+            android:summary="保存路径为临时目录 如/sdcard/outfile.pcm"
+            android:title="保存录音"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="accept-audio-data"
+            android:summary="CALLBACK_EVENT_ASR_AUDIO参数。不需要音频二进制数据的回调，请勿开启，否则影响性能"
+            android:title="开启代码中音频回调事件"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="accept-audio-volume"
+            android:summary="CALLBACK_EVENT_ASR_VOLUME参数。是否需要音频的音量回调。正常使用请勿开启"
+            android:title="开启代码中音量回调事件"/>
+    </PreferenceCategory>
+</PreferenceScreen>

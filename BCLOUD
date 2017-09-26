@@ -1,0 +1,1 @@
+BUILD_SUBMITTER -x -m baidu/personal-code/android-asr-demo -c "cd baidu/personal-code/android-asr-demo && mkdir output &&cp BCLOUD ./output/" -u ./
